@@ -1,0 +1,11 @@
+services:
+  jupyter_lab:
+    container_name: jupyter_lab
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8888:8888
+    volumes:
+      - ./notebooks:/workspace/notebooks
+    command: start-notebook.py --NotebookApp.token='my-token'
